@@ -6,6 +6,8 @@ CSL untuk PS Biologi
 
 9 Mar 2021: Pembuatan csl dan penambahan sitasi untuk jurnal dan artikel
 
+9 Mar 2021: Macro using
+
 9 Mar 2021: Pembuatan csl khusus Fauna Kalimantan
 
 ---
