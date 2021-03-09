@@ -2,6 +2,11 @@
 CSL untuk PS Biologi
 
 ---
+## Update
+
+9 Mar 2021: Pembuatan csl dan penambahan sitasi untuk jurnal dan artikel
+
+---
 
 ## Code
 
