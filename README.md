@@ -1,8 +1,11 @@
 # csl-fmipa-bio
 CSL untuk PS Biologi
 
+---
+
 ## Code
 
+```csl
 <?xml version="1.0" encoding="utf-8"?>
 <style class="in-text" version="1.0" name-form="count" and="symbol" et-al-min="2" initialize-with="." name-as-sort-order="first" initialize-with-hyphen="false" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
   <info>
@@ -68,3 +71,4 @@ CSL untuk PS Biologi
     </layout>
   </bibliography>
 </style>
+```
