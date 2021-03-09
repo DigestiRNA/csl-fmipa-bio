@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style class="in-text" version="1.0" name-delimiter=", " name-form="count" and="symbol" et-al-min="2" initialize-with="." name-as-sort-order="first" names-delimiter=", " initialize-with-hyphen="false" demote-non-dropping-particle="never" xmlns="http://purl.org/net/xbiblio/csl">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Faukal</title>
+    <id>http://www.zotero.org/styles/faukal</id>
+    <link rel="self" href="http://www.zotero.org/styles/faukal"/>
+    <updated>2021-03-09T14:26:43+00:00</updated>
+  </info>
+  <macro name="status">
+    <choose>
+      <if match="none" variable="page issue volume">
+        <text variable="status" text-case="capitalize-first"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="author check">
+    <choose>
+      <if match="none" variable="author">
+        <text term="anonymous" text-case="capitalize-first"/>
+      </if>
+      <else>
+        <names variable="author"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="title check">
+    <choose>
+      <if match="any" variable="container-title">
+        <choose>
+          <if type="article-journal" match="any">
+            <text variable="title" text-case="capitalize-first" suffix=". "/>
+            <text variable="container-title" text-case="capitalize-all" font-style="italic"/>
+          </if>
+          <else-if type="chapter" match="any">
+            <text variable="title" suffix=". "/>
+            <text term="in" suffix=" "/>
+            <text macro="author check" suffix=" "/>
+            <text variable="container-title" text-case="title" font-style="italic"/>
+          </else-if>
+        </choose>
+      </if>
+      <else>
+        <text variable="title" text-case="title" font-style="normal"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="volume-issue">
+    <choose>
+      <if type="article-journal" match="any">
+        <number font-style="italic" font-weight="bold" variable="volume"/>
+        <number prefix="(" suffix=")" variable="issue"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="pages">
+    <choose>
+      <if type="article-journal" match="any">
+        <label text-case="lowercase" suffix=": " variable="page" form="symbol"/>
+        <text variable="page"/>
+      </if>
+      <else-if type="chapter" match="any">
+        <label text-case="lowercase" prefix=". " suffix=": " variable="locator" form="symbol"/>
+        <text variable="page"/>
+      </else-if>
+    </choose>
+  </macro>
+  <macro name="publisher">
+    <choose>
+      <if type="book chapter" match="any">
+        <text variable="publisher" text-case="capitalize-first" suffix=": "/>
+        <text variable="publisher-place" text-case="capitalize-first"/>
+      </if>
+    </choose>
+  </macro>
+  <citation name-form="count" et-al-min="2" et-al-use-first="2" collapse="citation-number">
+    <sort>
+      <key variable="citation-number" names-min="1" names-use-first="1"/>
+    </sort>
+    <layout font-style="normal" font-weight="normal" text-decoration="none" delimiter=", " prefix="[" suffix="]">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography name-delimiter=", " name-form="count" and="symbol" initialize-with="." name-as-sort-order="first" names-delimiter=". " subsequent-author-substitute-rule="partial-first" line-spacing="2" hanging-indent="true">
+    <layout>
+      <text macro="author check" suffix=". "/>
+      <date date-parts="year" form="text" variable="issued" suffix=". "/>
+      <text macro="title check"/>
+      <text macro="volume-issue" prefix=" " suffix=" "/>
+      <text macro="pages" suffix="."/>
+      <text macro="publisher" prefix=". "/>
+    </layout>
+    <sort>
+      <key variable="author"/>
+    </sort>
+  </bibliography>
+</style>
